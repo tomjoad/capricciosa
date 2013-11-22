@@ -35,6 +35,19 @@ end
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
+# Authentication solution
+gem 'devise'
+
+# graphics
+gem 'therubyracer'
+gem 'less-rails-bootstrap'
+
+# old mass-assignment solution
+gem 'protected_attributes'
+
+# nokogiri for parsing
+gem 'nokogiri'
+
 # Use unicorn as the app server
 # gem 'unicorn'
 
