@@ -11,7 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131120182558) do
+ActiveRecord::Schema.define(version: 20131125001300) do
+
+  create_table "categories", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "logo_promos", force: true do |t|
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "price_promos", force: true do |t|
+    t.float    "price"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "products", force: true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.integer  "category_id"
+    t.integer  "fixed_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -30,5 +57,14 @@ ActiveRecord::Schema.define(version: 20131120182558) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "variants", force: true do |t|
+    t.float    "price"
+    t.integer  "product_id"
+    t.integer  "price_promo_id"
+    t.integer  "logo_promo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

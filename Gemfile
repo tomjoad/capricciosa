@@ -48,6 +48,10 @@ gem 'protected_attributes'
 # nokogiri for parsing
 gem 'nokogiri'
 
+# testing
+group :test do
+  gem 'factory_girl_rails'
+end
 # Use unicorn as the app server
 # gem 'unicorn'
 
